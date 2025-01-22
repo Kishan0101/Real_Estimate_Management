@@ -10,7 +10,7 @@ const Login = ({ setAuthToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/login", { username, password });
+      const res = await axios.post("https://real-estimate-management.onrender.com/login", { username, password });
       localStorage.setItem("token", res.data.token);
       setAuthToken(res.data.token);
       navigate("/");
