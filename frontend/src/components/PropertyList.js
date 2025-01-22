@@ -5,7 +5,7 @@ const PropertyList = () => {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/properties").then((res) => setProperties(res.data));
+    axios.get("https://real-estimate-management.onrender.com/properties").then((res) => setProperties(res.data));
   }, []);
 
   return (
