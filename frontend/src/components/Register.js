@@ -10,7 +10,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/register", { username, password });
+      await axios.post("https://real-estimate-management.onrender.com/register", { username, password });
       navigate("/login");
     } catch (err) {
       alert("Registration failed");
