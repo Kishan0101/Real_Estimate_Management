@@ -18,7 +18,7 @@ const AddProperty = () => {
 
   const fetchProperties = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/properties");
+      const res = await axios.get("https://real-estimate-management.onrender.com/properties");
       setProperties(res.data);
     } catch (err) {
       console.error("Error fetching properties:", err);
@@ -32,7 +32,7 @@ const AddProperty = () => {
       if (isEditMode) {
         // Update existing property
         await axios.put(
-          `http://localhost:5000/properties/${currentPropertyId}`,
+          `https://real-estimate-management.onrender.com/properties/${currentPropertyId}`,
           { title, description, image, contact },
           { headers: { Authorization: token } }
         );
@@ -40,7 +40,7 @@ const AddProperty = () => {
       } else {
         // Add new property
         await axios.post(
-          "http://localhost:5000/properties",
+          "https://real-estimate-management.onrender.com/properties",
           { title, description, image, contact },
           { headers: { Authorization: token } }
         );
@@ -65,7 +65,7 @@ const AddProperty = () => {
   const handleDelete = async (propertyId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/properties/${propertyId}`, {
+      await axios.delete(`https://real-estimate-management.onrender.com/properties/${propertyId}`, {
         headers: { Authorization: token },
       });
       alert("Property deleted successfully!");
